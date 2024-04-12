@@ -6,7 +6,7 @@ n = int(input("input number of users > "))
 
 for i in range(n): # make random user profile
     users.append(UserProfile())
-    users[i].sex = random.choice(['male', 'female']) # sex
+    users[i].gender = random.choice(['male', 'female']) # gender
     users[i].menu = random.choice(['c','j','k','w']) # chinese, japanese, korean, western
     users[i].talking = random.choice(['little','lot']) # talking 
     users[i].age = random.choice(list(range(19,25))) # age
@@ -15,23 +15,23 @@ for i in range(n): # make random user profile
 user = UserProfile()
 
 # for x in users:
-#     print(x.sex + ' ', x.menu + ' ', x.talking + ' ', x.age)
+#     print(x.gender + ' ', x.menu + ' ', x.talking + ' ', x.age)
 
-user.sex = input("male or female > ")
+user.gender = input("male or female > ")
 user.menu = input("input menu > ") # select one of [c, j, k, w]
 user.talking = input("input talking > ") # selet one of [little, lot]
 user.age = int(input("input age > ")) # input age
 
-result = [] # recommending algorithm 
+result = [] 
 
+# recommending algorithm 
 for x in users:
-
     score = 0
-    if x.sex != user.sex:
+    if x.gender != user.gender: # same gender
         score += 1
-    if x.menu == user.menu:
+    if x.menu == user.menu: # same menu
         score += 1
-    if x.talking == user.talking:
+    if x.talking == user.talking: # same talking
         score += 1
     if max([user.age,x.age]) - min(user.age,x.age) <= 3: # years apart < 4
         score += 1

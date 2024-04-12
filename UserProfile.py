@@ -3,10 +3,10 @@
 class UserProfile:
     def __init__(self):
         self.menu = ''
-        self.sex = ''
+        self.gender = ''
         self.talking = ''
-        self.age = ''
-        self.tag = ''
+        self.age = -1
+        self.tag = '' # save user number
 
 
 
