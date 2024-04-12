@@ -6,6 +6,7 @@ class UserProfile:
         self.sex = ''
         self.talking = ''
         self.age = ''
+        self.tag = ''
 
 
 
